@@ -1,0 +1,21 @@
+<!-- popular_authors_and_readers.html -->
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <title>Popular Authors and Readers</title>
+</head>
+<body>
+    <h1>Popular Authors and Their Readers</h1>
+    <ul>
+    {% for info in author_reader_info %}
+        <li>{{ info.author.name }} has {{ info.author.num_readers }} readers:</li>
+        <ul>
+        {% for reader in info.readers %}
+            <li>{{ reader.name }}</li>
+            <p></p>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+    </ul>
+</body>
+</html>

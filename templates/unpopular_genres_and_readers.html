@@ -1,0 +1,21 @@
+<!-- unpopular_genres_and_readers.html -->
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <title>Unpopular Genres and Readers</title>
+</head>
+<body>
+    <h1>Unpopular Genres and Their Readers</h1>
+    <ul>
+    {% for info in genre_reader_info %}
+        <li>{{ info.genre.name }} has {{ info.genre.num_readers }} readers:</li>
+        <ul>
+        {% for reader in info.readers %}
+            <li>{{ reader.name }}</li>
+            <p></p>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+    </ul>
+</body>
+</html>

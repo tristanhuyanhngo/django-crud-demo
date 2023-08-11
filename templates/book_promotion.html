@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <title>Book Promotion List</title>
+</head>
+<body>
+    <h1>List of Books with Promotion</h1>
+    <ul>
+    {% for book in books_with_promotion %}
+        <li>
+            Book: {{ book.title }}<br>
+            Promotion Code: {{ book.promotion.code }}<br>
+            Discount Percentage: {{ book.promotion.discount_percentage }}%<br>
+            Start Date: {{ book.promotion.start_date }}<br>
+            End Date: {{ book.promotion.end_date }}
+        </li>
+        <p></p>
+    {% endfor %}
+    </ul>
+</body>
+</html>

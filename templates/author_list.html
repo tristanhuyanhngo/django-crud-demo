@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <title>Author List</title>
+</head>
+<body>
+    <h1>List of Authors and Their Books</h1>
+    <ul>
+    {% for author in authors %}
+        <li>
+            Author: {{ author.name }}<br>
+            Bio: {{ author.bio }}<br>
+            Birth Date: {{ author.birth_date }}<br>
+            Nationality: {{ author.nationality }}<br>
+            Books Written:
+            <ul>
+            {% for book in author.books_written.all %}
+                <li>{{ book.title }}</li>
+            {% endfor %}
+            </ul>
+            <p></p>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!-- loyal_readers.html -->
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <title>Loyal Readers</title>
+</head>
+<body>
+    <h1>Loyal Readers</h1>
+    <ul>
+    {% for info in reader_info %}
+        <li>{{ info.reader.name }} has bought {{ info.reader.num_books }} books:</li>
+        <ul>
+        {% for book in info.books %}
+            <li>{{ book.title }}</li>
+            <p></p>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+    </ul>
+</body>
+</html>
